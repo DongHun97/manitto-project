@@ -33,6 +33,62 @@ async function revealRealNames() {
   }
 }
 
+async function register() {
+  const team = document.getElementById('team').value;
+  const name = document.getElementById('name').value.trim();
+  const password = document.getElementById('pw').value;
+
+  if (!team || !name || !password) {
+    alert("모든 정보를 입력해주세요.");
+    return;
+  }
+
+  try {
+    const res = await fetch('/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ team, name, password })
+    });
+
+    const result = await res.json();
+    if (res.ok) {
+      document.getElementById('result').innerText = `🎉 마니또 추첨 완료! 마니또는 비밀입니다 😉`;
+    } else {
+      document.getElementById('result').innerText = `❌ ${result.error}`;
+    }
+  } catch (err) {
+    document.getElementById('result').innerText = `⚠ 서버 연결 오류`;
+  }
+}
+
+async function check() {
+  const team = document.getElementById('team').value;
+  const name = document.getElementById('name').value.trim();
+  const password = document.getElementById('pw').value;
+
+  if (!team || !name || !password) {
+    alert("모든 정보를 입력해주세요.");
+    return;
+  }
+
+  try {
+    const res = await fetch('/check', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ team, name, password })
+    });
+
+    const result = await res.json();
+    if (res.ok) {
+      document.getElementById('result').innerText = `🎁 ${name}님의 마니또는 👉 ${result.assigned} 님입니다!`;
+    } else {
+      document.getElementById('result').innerText = `❌ ${result.error}`;
+    }
+  } catch (err) {
+    document.getElementById('result').innerText = `⚠ 서버 연결 오류`;
+  }
+}
+
 function renderResult(data, reveal) {
   let html = `<h3>${reveal ? "✅ 실명 결과" : "🙈 익명 마니또 배정 상태"}</h3>`;
   for (const team in data) {

@@ -1,1 +1,54 @@
-{}
+{
+  "뮤비2팀": {
+    "강동훈": {
+      "passwordHash": "$2b$10$8mIxWVBug43KehUu3RR.cuNPL3FweNw0wGM0afRGDOPxvySWE6n56",
+      "assigned": "송호석"
+    },
+    "김서현": {
+      "passwordHash": null,
+      "assigned": "문소희"
+    },
+    "방새영": {
+      "passwordHash": null,
+      "assigned": "김서현"
+    },
+    "문소희": {
+      "passwordHash": null,
+      "assigned": "강동훈"
+    },
+    "송호석": {
+      "passwordHash": null,
+      "assigned": "고채완"
+    },
+    "고채완": {
+      "passwordHash": null,
+      "assigned": "방새영"
+    }
+  },
+  "다큐팀": {
+    "김찬영": {
+      "passwordHash": "$2b$10$nXncbXIhctP.29PAWRygie2XxGyFqkty3ijbwpPXjkYGD4jUXAP0a",
+      "assigned": "이지아"
+    },
+    "김혜원": {
+      "passwordHash": "$2b$10$RF.GYtm2FRQiVgRVFWphn.yoUkjtJUKNPPM9dJDOP5s9UFxmElkeq",
+      "assigned": "김찬영"
+    },
+    "이지아": {
+      "passwordHash": "$2b$10$RDyuYhlqtIjwxCCsR1fH9eQUYps4SrFyKSAS2FzOEugux5bxybix2",
+      "assigned": "김준민"
+    },
+    "김유주": {
+      "passwordHash": null,
+      "assigned": "전시은"
+    },
+    "전시은": {
+      "passwordHash": null,
+      "assigned": "김혜원"
+    },
+    "김준민": {
+      "passwordHash": null,
+      "assigned": "김유주"
+    }
+  }
+}

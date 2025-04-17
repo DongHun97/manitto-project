@@ -1,0 +1,13 @@
+{
+  "name": "manitto-project",
+  "version": "1.0.0",
+  "description": "마니또 관리자 익명 확인 기능 포함",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.19.2"
+  }
+}

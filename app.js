@@ -98,6 +98,8 @@ app.post('/admin/view', (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log('✅ 마니또 관리자 서버 시작: http://localhost:3000');
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`✅ 마니또 서버 실행 중: http://localhost:${port}`);
 });

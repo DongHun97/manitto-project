@@ -85,13 +85,24 @@ app.post('/admin/view', (req, res) => {
   const { id, password, reveal } = req.body;
   if (id === 'arthur0079' && password === 'editor0079') {
     const result = {};
-    for (const team in data) {
+
+    for (const team in TEAMS) {
       result[team] = {};
-      for (const person in data[team]) {
-        const assigned = data[team][person].assigned;
-        result[team][person] = reveal ? assigned : aliasMap[team][assigned];
+      if (data[team]) {
+        for (const person in data[team]) {
+          const assigned = data[team][person].assigned;
+          result[team][person] = reveal
+            ? assigned
+            : aliasMap[team]?.[assigned] || "(미배정)";
+        }
+      } else {
+        // 팀 자체가 아직 마니또 배정되지 않은 경우
+        TEAMS[team].forEach((person) => {
+          result[team][person] = "(미배정)";
+        });
       }
     }
+
     return res.json({ success: true, data: result });
   } else {
     return res.status(403).json({ error: '관리자 인증 실패' });
